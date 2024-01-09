@@ -1,4 +1,8 @@
+using Twilio;
+
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+
+
 
 builder.CreateUmbracoBuilder()
     .AddBackOffice()
@@ -10,6 +14,14 @@ builder.CreateUmbracoBuilder()
 WebApplication app = builder.Build();
 
 await app.BootUmbracoAsync();
+
+var config = app.Services.GetRequiredService<IConfiguration>();
+var configPath = "SmsDataService:Twilio:";
+
+var accountSid = config[$"{configPath}AccountSid"];
+var authToken = config[$"{configPath}AuthToken"];
+
+TwilioClient.Init(accountSid, authToken);
 
 app.UseHttpsRedirection();
 

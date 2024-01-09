@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Twilio;
 using Twilio.Rest.Verify.V2.Service;
 using Umbraco.Cms.Core.Cache;
 using Umbraco.Cms.Core.Logging;
@@ -19,7 +18,7 @@ namespace TwilioOtpDemo.Web
 		IMemberManager _memberManager;
 		IMemberSignInManager _memberSignInManager;
 		IHttpContextAccessor _httpContextAccessor;
-		private readonly IConfiguration _configuration;
+
 		private readonly string? _serviceSid;
 
 		public AuthenticationSurfaceController(
@@ -39,16 +38,9 @@ namespace TwilioOtpDemo.Web
 			_memberService = memberService;
 			_memberManager = memberManager;
 			_memberSignInManager = memberSignInManager;
-			_httpContextAccessor = httpContextAccessor;
-			_configuration = configuration;
-			
-			var configPath = "SmsDataService:Twilio:";
+			_httpContextAccessor = httpContextAccessor;	
 
-			var accountSid = _configuration[$"{configPath}AccountSid"];
-			var authToken = _configuration[$"{configPath}AuthToken"];
-			TwilioClient.Init(accountSid, authToken);
-
-			_serviceSid = _configuration[$"{configPath}ServiceSid"];
+			_serviceSid = configuration["SmsDataService:Twilio:ServiceSid"];
 		}
 
 		public const string UserNameKey = "usernameKey";
@@ -57,10 +49,9 @@ namespace TwilioOtpDemo.Web
 		[HttpPost]
 		public IActionResult Login(long member_danish_number, string otp, string redirect_url = "/")
 		{
-			string username = "+45";
 			if (member_danish_number.ToString().Length == 8)
 			{
-				username += member_danish_number;
+				string username = $"+45{member_danish_number}";
 				if (string.IsNullOrWhiteSpace(otp))
 				{
 					// send otp

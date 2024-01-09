@@ -1,9 +1,14 @@
 {
   "Name": "Secure Page",
   "Alias": "SecurePage",
+  "File": "umb://template-file/SecurePage.cshtml",
   "Master": "umb://template/83e7303412044847a131b507040d8699",
   "Udi": "umb://template/8aac7b6261884367a3161e21b57ca8c9",
   "Dependencies": [
+    {
+      "Udi": "umb://template-file/SecurePage.cshtml",
+      "Ordering": true
+    },
     {
       "Udi": "umb://template/83e7303412044847a131b507040d8699",
       "Ordering": true

@@ -8,13 +8,18 @@
 @{
 	Layout = "Master.cshtml";
 	var currentMember = await _memberManager.GetCurrentMemberAsync();
+	var danishPhoneNumber = _httpContextAccessor.HttpContext.Session.GetString(AuthenticationSurfaceController.UserNameKey);
 }
 @if (currentMember == null)
 {
 	using (Html.BeginUmbracoForm<AuthenticationSurfaceController>(action: nameof(AuthenticationSurfaceController.Login)))
 	{
-		<input type="number" id="member_danish_number" name="member_danish_number" value="@_httpContextAccessor.HttpContext.Session.GetString(AuthenticationSurfaceController.UserNameKey)" required>
-		<input type="number" id="otp" name="otp">
+		<div>+45</div>
+		<input type="number" id="member_danish_number" name="member_danish_number" value="@danishPhoneNumber" required><br/>
+		if (!string.IsNullOrWhiteSpace(danishPhoneNumber))
+		{
+			<input type="number" id="otp" name="otp">
+		}
 		<input type="hidden" id="redirect_url" name="redirect_url">
 		<input type="submit" value="Login">
 	}

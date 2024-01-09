@@ -1,9 +1,14 @@
 {
   "Name": "Login page",
   "Alias": "LoginPage",
+  "File": "umb://template-file/LoginPage.cshtml",
   "Master": "umb://template/83e7303412044847a131b507040d8699",
   "Udi": "umb://template/e899a08f96b04cb6bab149b5d0fb097c",
   "Dependencies": [
+    {
+      "Udi": "umb://template-file/LoginPage.cshtml",
+      "Ordering": true
+    },
     {
       "Udi": "umb://template/83e7303412044847a131b507040d8699",
       "Ordering": true

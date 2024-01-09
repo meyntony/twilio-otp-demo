@@ -1,0 +1,8 @@
+{
+  "Name": "Everyone",
+  "Alias": "",
+  "Udi": "umb://member-group/bda43c6f24114c80b1342a0f4eb8dba6",
+  "Dependencies": [],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.MemberGroupArtifact",
+  "__version": "13.0.2"
+}

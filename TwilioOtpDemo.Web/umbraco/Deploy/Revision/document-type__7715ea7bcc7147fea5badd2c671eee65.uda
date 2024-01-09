@@ -1,0 +1,51 @@
+{
+  "Name": "Secure Page",
+  "Alias": "securePage",
+  "DefaultTemplate": "umb://template/8aac7b6261884367a3161e21b57ca8c9",
+  "AllowedTemplates": [
+    "umb://template/8aac7b6261884367a3161e21b57ca8c9"
+  ],
+  "HistoryCleanup": {},
+  "Icon": "icon-combination-lock color-blue",
+  "Thumbnail": "folder.png",
+  "Permissions": {
+    "AllowedChildContentTypes": [
+      "umb://document-type/7715ea7bcc7147fea5badd2c671eee65"
+    ]
+  },
+  "CompositionContentTypes": [],
+  "PropertyGroups": [
+    {
+      "Key": "9f2c11af-b509-4a65-acdd-f2e278e9e0fb",
+      "Name": "Content",
+      "Type": 1,
+      "Alias": "content",
+      "PropertyTypes": [
+        {
+          "Key": "aa4f009d-6202-4213-89dd-4a9b4d64f163",
+          "Alias": "secret",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Mandatory": true,
+          "Name": "Secret"
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/7715ea7bcc7147fea5badd2c671eee65",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/7715ea7bcc7147fea5badd2c671eee65"
+    },
+    {
+      "Udi": "umb://template/8aac7b6261884367a3161e21b57ca8c9",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "13.0.2"
+}

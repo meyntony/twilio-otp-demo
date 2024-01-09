@@ -1,0 +1,19 @@
+{
+  "Name": "Access denied page",
+  "Alias": "AccessDeniedPage",
+  "File": "umb://template-file/AccessDeniedPage.cshtml",
+  "Master": "umb://template/83e7303412044847a131b507040d8699",
+  "Udi": "umb://template/006dbcaa91d14ad8af177fcf4f695bc4",
+  "Dependencies": [
+    {
+      "Udi": "umb://template-file/AccessDeniedPage.cshtml",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://template/83e7303412044847a131b507040d8699",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.TemplateArtifact",
+  "__version": "13.0.2"
+}

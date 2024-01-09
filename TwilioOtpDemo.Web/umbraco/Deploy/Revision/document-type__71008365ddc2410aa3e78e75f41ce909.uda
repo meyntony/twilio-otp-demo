@@ -1,0 +1,26 @@
+{
+  "Name": "Access Denied Page",
+  "Alias": "accessDeniedPage",
+  "DefaultTemplate": "umb://template/006dbcaa91d14ad8af177fcf4f695bc4",
+  "AllowedTemplates": [
+    "umb://template/006dbcaa91d14ad8af177fcf4f695bc4"
+  ],
+  "HistoryCleanup": {},
+  "Icon": "icon-block color-blue",
+  "Thumbnail": "folder.png",
+  "Permissions": {
+    "AllowedChildContentTypes": []
+  },
+  "CompositionContentTypes": [],
+  "PropertyGroups": [],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/71008365ddc2410aa3e78e75f41ce909",
+  "Dependencies": [
+    {
+      "Udi": "umb://template/006dbcaa91d14ad8af177fcf4f695bc4",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "13.0.2"
+}

@@ -1,7 +1,17 @@
 {
   "Deploy": {
     "Project": {
-      "Workspaces": []
+      "Name": "twilio otp demo",
+      "Alias": "twilio-otp-demo",
+      "Id": "f2b8e89a-45d3-4d9c-851a-7d778d4600fe",
+      "Workspaces": [
+        {
+          "Id": "45989934-47e8-45fc-9ebc-7370e70d82e7",
+          "Name": "Live",
+          "Type": "live",
+          "Url": "https://twilio-otp-demo.euwest01.umbraco.io"
+        }
+      ]
     },
     "Settings": {}
   },

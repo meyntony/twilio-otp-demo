@@ -5,21 +5,38 @@
 @using Umbraco.Cms.Core.Security;
 @inject IMemberManager _memberManager;
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/styles.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>OTP Demo</title>
+</head>
+<body class="bg-gradient-to-br from-blue-950 to-cyan-950">
+
+
 @{
     var currentMember = await _memberManager.GetCurrentMemberAsync();
 }
-
+<div>
 @if (currentMember != null)
 {
     using (Html.BeginUmbracoForm<AuthenticationSurfaceController>(action: nameof(AuthenticationSurfaceController.Logout)))
     {
-        <input type="submit" value="Logout @currentMember.Name">
+        <input class="mb-4 py-2 px-4 text-white rounded-md bg-indigo-500 hover:bg-indigo-400" type="submit" value="Logout @currentMember.Name">
     }
 }
 
+
 @foreach (var securePage in Model.Children<SecurePage>())
 {
-    <a href="@securePage.Url()">@securePage.Name</a>
+    <a href="@securePage.Url()" class="py-2 px-4 rounded-md">@securePage.Name</a>
 }
+</div>
 
-@RenderBody()
+    @RenderBody()
+</body>
+</html>
+
